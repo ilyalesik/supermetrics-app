@@ -1,0 +1,41 @@
+
+.login_form-container {
+    padding: var(--spacing-07) var(--spacing-08);
+    background: white;
+}
+
+.login_form-container > * + * {
+    margin-top: var(--spacing-04);
+}
+
+.login_form-label {
+    display: block;
+}
+
+.login_form-input {
+    margin-top: var(--spacing-02);
+}
+
+.login_form-footer {
+    display: flex;
+    justify-content: end;
+}
+
+.login_form-header {
+    display: flex;
+    justify-content: center;
+}
+
+.login_form-button {
+    background: var(--blue50);
+    color: white;
+
+    border: none;
+    border-radius: var(--spacing-01);
+
+    padding: var(--spacing-03) var(--spacing-04);
+}
+
+.login_form-button:hover,.login_form-button:focus {
+    background: var(--blue60);
+}
