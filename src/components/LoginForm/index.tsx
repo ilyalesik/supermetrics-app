@@ -1,9 +1,15 @@
 import React from "react";
 import "./index.css";
+import { useStore } from "effector-react";
+import { $fail, $isLoading, login } from "../../stores/auth";
 
 export const LoginForm = ({
+  error,
+  isLoading,
   onSubmit,
 }: {
+  error?: Error;
+  isLoading: boolean;
   onSubmit?: (value: { name: string; email: string }) => void;
 }) => {
   const [name, setName] = React.useState("");
@@ -12,7 +18,8 @@ export const LoginForm = ({
   return (
     <form
       className="login-form-container"
-      onSubmit={() => {
+      onSubmit={(e) => {
+        e.preventDefault();
         onSubmit &&
           onSubmit({
             name,
@@ -48,11 +55,36 @@ export const LoginForm = ({
         />
       </div>
 
+      {error && (
+        <div>
+          <p className="login-form-error-message">Error: {error.message}</p>
+        </div>
+      )}
+
       <div className="login-form-footer">
-        <button className="login-form-button" type="submit">
+        <button
+          disabled={isLoading}
+          className="login-form-button"
+          type="submit"
+        >
           Go
         </button>
       </div>
     </form>
   );
 };
+
+const LoginFormConnected = () => {
+  const isLoading = useStore($isLoading);
+  const fail = useStore($fail);
+
+  return (
+    <LoginForm
+      error={(fail && fail.error) || undefined}
+      isLoading={isLoading}
+      onSubmit={login}
+    />
+  );
+};
+
+export default LoginFormConnected;

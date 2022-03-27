@@ -37,3 +37,11 @@
 .login-form-button:focus {
   background: var(--blue60);
 }
+
+.login-form-button:disabled {
+  background: var(--grey30);
+}
+
+.login-form-error-message {
+  color: var(--red50);
+}
