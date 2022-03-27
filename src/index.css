@@ -1,3 +1,4 @@
+/* stylelint-disable */
 /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -136,14 +137,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+/* stylelint-enable */
 
 :root {
   --blue50: #4d96ff;
   --blue60: #407ed6;
   --blue70: #386bb7;
   --grey30: #bababa;
-  --grey50: #888888;
-
+  --grey50: #888;
   --spacing-01: 2px;
   --spacing-02: 4px;
   --spacing-03: 8px;

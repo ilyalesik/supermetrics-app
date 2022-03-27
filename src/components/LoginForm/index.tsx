@@ -11,7 +11,7 @@ export const LoginForm = ({
 
   return (
     <form
-      className="login_form-container"
+      className="login-form-container"
       onSubmit={() => {
         onSubmit &&
           onSubmit({
@@ -20,16 +20,16 @@ export const LoginForm = ({
           });
       }}
     >
-      <div className="login_form-header">
+      <div className="login-form-header">
         <p>Login</p>
       </div>
 
       <div>
-        <label className="login_form-label" htmlFor="name">
+        <label className="login-form-label" htmlFor="name">
           Name
         </label>
         <input
-          className="login_form-input"
+          className="login-form-input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -37,19 +37,19 @@ export const LoginForm = ({
       </div>
 
       <div>
-        <label className="login_form-label" htmlFor="name">
+        <label className="login-form-label" htmlFor="name">
           Email
         </label>
         <input
-          className="login_form-input"
+          className="login-form-input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
 
-      <div className="login_form-footer">
-        <button className="login_form-button" type="submit">
+      <div className="login-form-footer">
+        <button className="login-form-button" type="submit">
           Go
         </button>
       </div>

@@ -1,41 +1,39 @@
-.login_form-container {
+.login-form-container {
   padding: var(--spacing-07) var(--spacing-08);
   background: white;
 }
 
-.login_form-container > * + * {
+.login-form-container > * + * {
   margin-top: var(--spacing-04);
 }
 
-.login_form-label {
+.login-form-label {
   display: block;
 }
 
-.login_form-input {
+.login-form-input {
   margin-top: var(--spacing-02);
 }
 
-.login_form-footer {
+.login-form-footer {
   display: flex;
   justify-content: end;
 }
 
-.login_form-header {
+.login-form-header {
   display: flex;
   justify-content: center;
 }
 
-.login_form-button {
+.login-form-button {
   background: var(--blue50);
   color: white;
-
   border: none;
   border-radius: var(--spacing-01);
-
   padding: var(--spacing-03) var(--spacing-04);
 }
 
-.login_form-button:hover,
-.login_form-button:focus {
+.login-form-button:hover,
+.login-form-button:focus {
   background: var(--blue60);
 }
