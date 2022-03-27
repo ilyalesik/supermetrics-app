@@ -1,0 +1,15 @@
+.posts-list-item {
+  max-width: 700px;
+  border: solid 1px var(--grey30);
+  border-radius: var(--spacing-02);
+  background: white;
+}
+
+.posts-list-item-header {
+  padding: var(--spacing-03);
+  border-bottom: solid 1px var(--grey30);
+}
+
+.posts-list-item-message {
+  padding: var(--spacing-03);
+}

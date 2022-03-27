@@ -32,6 +32,8 @@ const registerErrorDataValidate = registerErrorData("register error data");
 
 export const login = createEvent<AuthData>();
 
+export const logout = createEvent();
+
 const registerEffect = createEffect(async ({ email, name }: AuthData) => {
   const url = `https://api.supermetrics.com/assignment/register`;
   const req = await fetch(url, {
@@ -71,6 +73,8 @@ $clientId.on(registerEffect.done, (_, value) => {
     return value.result.data.sl_token;
   }
 });
+
+$clientId.on(logout, () => null);
 
 export const $isAuthorized = $clientId.map((state) => !!state);
 

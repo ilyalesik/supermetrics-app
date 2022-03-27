@@ -4,10 +4,18 @@ import LoginForm from "./components/LoginForm";
 import { useStore } from "effector-react";
 import { $isAuthorized } from "./stores/auth";
 import { Redirect, Switch, Route, useLocation } from "wouter";
+import PostsListConnected from "./components/PostsList";
 
 function App() {
   const [, setLocation] = useLocation();
   const isAuthorized = useStore($isAuthorized);
+
+  React.useEffect(() => {
+    if (isAuthorized) {
+      setLocation("/");
+    }
+  }, [isAuthorized]);
+
   if (!isAuthorized) {
     return (
       <Switch>
@@ -21,12 +29,6 @@ function App() {
     );
   }
 
-  React.useEffect(() => {
-    if (isAuthorized) {
-      setLocation("/");
-    }
-  }, [isAuthorized]);
-
   return (
     <Switch>
       <Route path="/">
@@ -34,7 +36,7 @@ function App() {
       </Route>
 
       <Route path="/dashboard">
-        <div>dashboard</div>
+        <PostsListConnected />
       </Route>
     </Switch>
   );
