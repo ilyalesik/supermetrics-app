@@ -1,5 +1,5 @@
 import React from "react";
-import { $posts, load } from "../../stores/posts";
+import { $posts } from "../../stores/posts";
 import { useStore } from "effector-react";
 import { PostsListItem } from "./PostsListItem";
 import "./index.css";
@@ -26,7 +26,6 @@ export const PostsList = ({
 };
 
 const PostsListConnected = () => {
-  React.useEffect(load, []);
   const postsData = useStore($posts);
   if (!postsData) {
     return null;

@@ -1,0 +1,16 @@
+.dashboard-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-areas: ". navigation" "senders posts";
+  grid-auto-columns: auto;
+  grid-gap: var(--spacing-04);
+  justify-content: flex-start;
+}
+
+.dashboard-page-senders {
+  padding: var(--spacing-03);
+}
+
+.dashboard-page-posts {
+  padding: var(--spacing-03);
+}

@@ -5,6 +5,8 @@ import { useStore } from "effector-react";
 import { $isAuthorized } from "./stores/auth";
 import { Redirect, Switch, Route, useLocation } from "wouter";
 import PostsListConnected from "./components/PostsList";
+import DashboardPageConnected from "./pages/DashboardPage";
+import SendersListConnected from "./components/SendersList";
 
 function App() {
   const [, setLocation] = useLocation();
@@ -36,7 +38,10 @@ function App() {
       </Route>
 
       <Route path="/dashboard">
-        <PostsListConnected />
+        <DashboardPageConnected
+          senders={<SendersListConnected />}
+          posts={<PostsListConnected />}
+        />
       </Route>
     </Switch>
   );

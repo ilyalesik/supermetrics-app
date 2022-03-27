@@ -1,0 +1,3 @@
+.senders-lists > * + * {
+  margin-top: var(--spacing-04);
+}

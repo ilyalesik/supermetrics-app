@@ -96,3 +96,29 @@ forward({
 export const $posts = restore(postsEffect.done, null).map(
   (state) => (state && state.result) || null
 );
+
+export const $senders = $posts.map((state) => {
+  if (!state) {
+    return null;
+  }
+  const result: {
+    [key: string]: {
+      from_id: string;
+      from_name: string;
+      count: number;
+    };
+  } = {};
+  state.posts.forEach((item) => {
+    if (result[item.from_id]) {
+      result[item.from_id].count += 1;
+    } else {
+      result[item.from_id] = {
+        from_id: item.from_id,
+        from_name: item.from_name,
+        count: 1,
+      };
+    }
+  });
+
+  return Object.values(result);
+});

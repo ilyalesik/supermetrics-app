@@ -1,0 +1,23 @@
+.sender-list-item {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-03) var(--spacing-04);
+  max-width: 350px;
+  border: solid 1px var(--grey30);
+  border-radius: var(--spacing-02);
+}
+
+.sender-list-item-title {
+  flex: 1;
+}
+
+.sender-list-item-count {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--spacing-07);
+  height: var(--spacing-07);
+  border-radius: 50%;
+  background: var(--grey50);
+  color: white;
+}
