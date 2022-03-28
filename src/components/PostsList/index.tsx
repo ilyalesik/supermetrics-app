@@ -31,7 +31,7 @@ const PostsListConnected = () => {
     return null;
   }
 
-  return <PostsList items={postsData.posts} />;
+  return <PostsList items={postsData} />;
 };
 
 export default PostsListConnected;

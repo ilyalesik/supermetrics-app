@@ -1,6 +1,7 @@
 import React from "react";
 import "./index.css";
 import { load } from "../../stores/posts";
+import PostsNavigationConnected from "../../components/PostsNavigation";
 
 export const DashboardPage = ({
   senders,
@@ -11,6 +12,10 @@ export const DashboardPage = ({
 }) => {
   return (
     <div className="dashboard-page">
+      <div />
+      <div>
+        <PostsNavigationConnected />
+      </div>
       <div className="dashboard-page-senders">{senders}</div>
       <div className="dashboard-page-posts">{posts}</div>
     </div>

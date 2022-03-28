@@ -1,0 +1,21 @@
+.posts-navigation {
+  display: flex;
+  padding: var(--spacing-03) var(--spacing-03) 0;
+}
+
+.posts-navigation > * + * {
+  margin-left: var(--spacing-03);
+}
+
+.posts-navigation-button {
+  padding: var(--spacing-03);
+  border: solid 1px var(--grey30);
+  border-radius: 2px;
+  background: white;
+  cursor: pointer;
+}
+
+.posts-navigation-button:hover,
+.posts-navigation-button:focus {
+  background: var(--grey10);
+}

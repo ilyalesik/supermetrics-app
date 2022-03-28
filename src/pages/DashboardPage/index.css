@@ -3,7 +3,7 @@
   grid-template-columns: auto auto;
   grid-template-areas: ". navigation" "senders posts";
   grid-auto-columns: auto;
-  grid-gap: var(--spacing-04);
+  grid-gap: var(--spacing-03);
   justify-content: flex-start;
 }
 
