@@ -9,6 +9,7 @@
 
 .sender-list-item-title {
   flex: 1;
+  margin-right: var(--spacing-04);
 }
 
 .sender-list-item-count {
