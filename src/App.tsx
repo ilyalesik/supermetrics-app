@@ -43,6 +43,16 @@ function App() {
           posts={<PostsListConnected />}
         />
       </Route>
+
+      <Route path="/dashboard/:from_id">
+        {(params) => (
+          <DashboardPageConnected
+            from_id={params.from_id}
+            senders={<SendersListConnected />}
+            posts={<PostsListConnected />}
+          />
+        )}
+      </Route>
     </Switch>
   );
 }

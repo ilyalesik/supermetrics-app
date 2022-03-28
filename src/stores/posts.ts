@@ -100,24 +100,40 @@ export const setDescOrder = createEvent();
 
 $ordering.on(setAskOrder, () => "asc").on(setDescOrder, () => "desc");
 
+const $fromId = createStore<string | null>(null);
+
+export const setFromId = createEvent<string | null>();
+
+$fromId.on(setFromId, (_, payload) => payload);
+
 const $rawPosts = restore(postsEffect.done, null).map(
   (state) => (state && state.result) || null
 );
 
-export const $posts = combine($ordering, $rawPosts, (ordering, rawPosts) => {
-  if (!rawPosts) {
-    return null;
-  }
-  return rawPosts.posts.slice().sort((a, b) => {
-    if (a.created_time < b.created_time) {
-      return ordering === "desc" ? 1 : -1;
-    } else if (a.created_time > b.created_time) {
-      return ordering === "desc" ? -1 : 1;
-    } else {
-      return 0;
+export const $posts = combine(
+  $ordering,
+  $fromId,
+  $rawPosts,
+  (ordering, fromId, rawPosts) => {
+    if (!rawPosts) {
+      return null;
     }
-  });
-});
+    return rawPosts.posts
+      .slice()
+      .filter((item) => {
+        return fromId === null || item.from_id === fromId;
+      })
+      .sort((a, b) => {
+        if (a.created_time < b.created_time) {
+          return ordering === "desc" ? 1 : -1;
+        } else if (a.created_time > b.created_time) {
+          return ordering === "desc" ? -1 : 1;
+        } else {
+          return 0;
+        }
+      });
+  }
+);
 
 export const $senders = $rawPosts.map((state) => {
   if (!state) {

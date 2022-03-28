@@ -1,3 +1,14 @@
 .senders-lists > * + * {
   margin-top: var(--spacing-04);
 }
+
+.senders-lists-link {
+  display: block;
+  text-decoration: none;
+  color: black;
+}
+
+.senders-lists-link:hover,
+.senders-lists-link:focus {
+  background: var(--grey10);
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import "./index.css";
-import { load } from "../../stores/posts";
+import { load, setFromId } from "../../stores/posts";
 import PostsNavigationConnected from "../../components/PostsNavigation";
 
 export const DashboardPage = ({
@@ -23,13 +23,19 @@ export const DashboardPage = ({
 };
 
 const DashboardPageConnected = ({
+  from_id,
   senders,
   posts,
 }: {
+  from_id?: string;
   senders: React.ReactElement;
   posts: React.ReactElement;
 }) => {
   React.useEffect(load, []);
+
+  React.useEffect(() => {
+    setFromId(from_id || null);
+  }, [from_id]);
 
   return <DashboardPage senders={senders} posts={posts} />;
 };
