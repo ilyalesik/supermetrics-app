@@ -1,6 +1,6 @@
 import { timeout } from "../../utils/timeout";
 import { $posts, load, setDescOrder, setFromId } from "./index";
-import { $clientId, login } from "../auth";
+import { $token, login } from "../auth";
 
 beforeAll(() => jest.spyOn(window, "fetch"));
 
@@ -165,10 +165,10 @@ it("logout on SL error", async () => {
 
   await timeout();
 
-  expect($clientId.getState()).toBe("12345");
+  expect($token.getState()).toBe("12345");
 
   load();
   await timeout();
 
-  expect($clientId.getState()).toBe(null);
+  expect($token.getState()).toBe(null);
 });

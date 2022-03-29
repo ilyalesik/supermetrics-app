@@ -7,7 +7,7 @@ import {
   restore,
   sample,
 } from "effector";
-import { $clientId, logout } from "../auth";
+import { $token, logout } from "../auth";
 import { getPosts } from "../../api/posts";
 
 const $page = createStore(1);
@@ -17,7 +17,7 @@ const postsEffect = createEffect(getPosts);
 // Loading trigger
 export const load = createEvent();
 sample({
-  source: combine($page, $clientId, (page, clientId) => ({ page, clientId })),
+  source: combine($page, $token, (page, clientId) => ({ page, clientId })),
   clock: load,
   target: postsEffect,
 });

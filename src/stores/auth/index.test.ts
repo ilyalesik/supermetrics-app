@@ -1,4 +1,4 @@
-import { $clientId, $fail, $isAuthorized, $isLoading, login } from "./index";
+import { $token, $fail, $isAuthorized, $isLoading, login } from "./index";
 import { timeout } from "../../utils/timeout";
 
 beforeAll(() => jest.spyOn(window, "fetch"));
@@ -32,7 +32,7 @@ it("login successfully", async () => {
 
   await timeout();
 
-  expect($clientId.getState()).toBe("12345");
+  expect($token.getState()).toBe("12345");
   expect($isAuthorized.getState()).toBeTruthy();
   expect($isLoading.getState()).toBeFalsy();
   expect($fail.getState()).toBeFalsy();
@@ -65,7 +65,7 @@ it("login failure", async () => {
 
   await timeout();
 
-  expect($clientId.getState()).toBe(null);
+  expect($token.getState()).toBe(null);
   expect($isAuthorized.getState()).toBeFalsy();
   expect($isLoading.getState()).toBeFalsy();
   expect($fail.getState()?.error.message).toBe("Wrong token");

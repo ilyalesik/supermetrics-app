@@ -10,23 +10,21 @@ const registerEffect = createEffect(register);
 login.watch((authData) => registerEffect(authData));
 
 // SL token storage
-const clientIdLocalStorage = connectLocalStorage("counter");
-export const $clientId = createStore<string | null>(
-  clientIdLocalStorage.init(null)
-);
-$clientId.on(registerEffect.done, (_, value) => {
+const tokenLocalStorage = connectLocalStorage("token");
+export const $token = createStore<string | null>(tokenLocalStorage.init(null));
+$token.on(registerEffect.done, (_, value) => {
   if (value.result) {
     return value.result.data.sl_token;
   }
   return null;
 });
-$clientId.on(registerEffect.fail, () => {
+$token.on(registerEffect.fail, () => {
   return null;
 });
-$clientId.on(logout, () => null);
-$clientId.watch(clientIdLocalStorage);
+$token.on(logout, () => null);
+$token.watch(tokenLocalStorage);
 
 // Auth state
-export const $isAuthorized = $clientId.map((state) => !!state);
+export const $isAuthorized = $token.map((state) => !!state);
 export const $isLoading = registerEffect.pending;
 export const $fail = restore(registerEffect.fail, null);
