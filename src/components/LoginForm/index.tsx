@@ -9,7 +9,7 @@ export const LoginForm = ({
   onSubmit,
 }: {
   error?: Error;
-  isLoading: boolean;
+  isLoading?: boolean;
   onSubmit?: (value: { name: string; email: string }) => void;
 }) => {
   const [name, setName] = React.useState("");
@@ -37,6 +37,7 @@ export const LoginForm = ({
         </label>
         <input
           className="login-form-input"
+          aria-label="name-input"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -49,6 +50,7 @@ export const LoginForm = ({
         </label>
         <input
           className="login-form-input"
+          aria-label="email-input"
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -66,6 +68,7 @@ export const LoginForm = ({
           disabled={isLoading}
           className="login-form-button"
           type="submit"
+          aria-label="submit-button"
         >
           Go
         </button>
