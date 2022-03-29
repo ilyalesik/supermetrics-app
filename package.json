@@ -29,7 +29,8 @@
     "prettier:check": "prettier --check \"**/*.{ts,tsx,js,css}\"",
     "stylelint:check": "stylelint \"**/*.css\"",
     "eslint:check": "eslint . --ext .js,.ts,.tsx,.jsx",
-    "test:check": "npm test -- --watchAll=false"
+    "test:check": "npm test -- --watchAll=false",
+    "ts:check": "tsc --noEmit"
   },
   "browserslist": {
     "production": [

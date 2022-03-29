@@ -1,5 +1,5 @@
 import React from "react";
-import { $senders } from "../../stores/posts";
+import { $senders } from "../../stores/senders";
 import { useStore } from "effector-react";
 import "./index.css";
 import { SendersListItem } from "./SendersListItem";
