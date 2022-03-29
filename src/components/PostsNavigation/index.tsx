@@ -11,10 +11,18 @@ export const PostsNavigation = ({
 }) => {
   return (
     <div className="posts-navigation">
-      <button className="posts-navigation-button" onClick={onAsc}>
+      <button
+        className="posts-navigation-button"
+        aria-label="asc-button"
+        onClick={onAsc}
+      >
         asc
       </button>
-      <button className="posts-navigation-button" onClick={onDesc}>
+      <button
+        className="posts-navigation-button"
+        aria-label="desc-button"
+        onClick={onDesc}
+      >
         desc
       </button>
     </div>

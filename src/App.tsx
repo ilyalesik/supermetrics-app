@@ -7,6 +7,7 @@ import { Redirect, Switch, Route, useLocation } from "wouter";
 import PostsListConnected from "./components/PostsList";
 import DashboardPageConnected from "./pages/DashboardPage";
 import SendersListConnected from "./components/SendersList";
+import PostsNavigationConnected from "./components/PostsNavigation";
 
 function App() {
   const [, setLocation] = useLocation();
@@ -41,6 +42,7 @@ function App() {
         <DashboardPageConnected
           senders={<SendersListConnected />}
           posts={<PostsListConnected />}
+          navigation={<PostsNavigationConnected />}
         />
       </Route>
 
@@ -50,6 +52,7 @@ function App() {
             from_id={params.from_id}
             senders={<SendersListConnected />}
             posts={<PostsListConnected />}
+            navigation={<PostsNavigationConnected />}
           />
         )}
       </Route>

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders LoginPage 1`] = `
+<div
+  className="login-page-container"
+>
+  <div>
+    form
+  </div>
+</div>
+`;

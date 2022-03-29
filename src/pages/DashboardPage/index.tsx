@@ -1,21 +1,20 @@
 import React from "react";
 import "./index.css";
 import { load, setFromId } from "../../stores/posts";
-import PostsNavigationConnected from "../../components/PostsNavigation";
 
 export const DashboardPage = ({
   senders,
   posts,
+  navigation,
 }: {
   senders: React.ReactElement;
   posts: React.ReactElement;
+  navigation: React.ReactElement;
 }) => {
   return (
     <div className="dashboard-page">
       <div />
-      <div>
-        <PostsNavigationConnected />
-      </div>
+      <div>{navigation}</div>
       <div className="dashboard-page-senders">{senders}</div>
       <div className="dashboard-page-posts">{posts}</div>
     </div>
@@ -24,12 +23,12 @@ export const DashboardPage = ({
 
 const DashboardPageConnected = ({
   from_id,
-  senders,
-  posts,
+  ...otherProps
 }: {
   from_id?: string;
   senders: React.ReactElement;
   posts: React.ReactElement;
+  navigation: React.ReactElement;
 }) => {
   React.useEffect(load, []);
 
@@ -37,7 +36,7 @@ const DashboardPageConnected = ({
     setFromId(from_id || null);
   }, [from_id]);
 
-  return <DashboardPage senders={senders} posts={posts} />;
+  return <DashboardPage {...otherProps} />;
 };
 
 export default DashboardPageConnected;

@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PostsList 1`] = `
+<ul
+  className="posts-lists"
+>
+  <li
+    className="posts-list-item"
+  >
+    <div
+      className="posts-list-item-header"
+    >
+      Mon Mar 28 2022 22:06:39 GMT+0300 (Moscow Standard Time)
+    </div>
+    <div
+      className="posts-list-item-message"
+    >
+      protection racism mood contrary pavement drama sample manufacture printer
+    </div>
+  </li>
+  <li
+    className="posts-list-item"
+  >
+    <div
+      className="posts-list-item-header"
+    >
+      Mon Mar 28 2022 16:32:35 GMT+0300 (Moscow Standard Time)
+    </div>
+    <div
+      className="posts-list-item-message"
+    >
+      plane falsify rear admit difficulty dorm core thin flat wrestle reputation beer syndrome reliance mail tumour intermediate speech recommendation linen combine move mug fling facade wrist wagon buy permission test leave dynamic expertise
+    </div>
+  </li>
+</ul>
+`;

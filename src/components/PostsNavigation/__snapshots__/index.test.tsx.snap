@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders PostsNavigation 1`] = `
+<div
+  className="posts-navigation"
+>
+  <button
+    aria-label="asc-button"
+    className="posts-navigation-button"
+    onClick={[Function]}
+  >
+    asc
+  </button>
+  <button
+    aria-label="desc-button"
+    className="posts-navigation-button"
+    onClick={[Function]}
+  >
+    desc
+  </button>
+</div>
+`;

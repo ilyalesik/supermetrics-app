@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SendersList 1`] = `
+<ul
+  className="senders-lists"
+>
+  <a
+    className="senders-lists-link"
+    href="/dashboard/user_1"
+    onClick={[Function]}
+    to={null}
+  >
+    <li
+      className="sender-list-item"
+    >
+      <p
+        className="sender-list-item-title"
+      >
+        Filomena Cort
+      </p>
+      <div
+        className="sender-list-item-count"
+      >
+        2
+      </div>
+    </li>
+  </a>
+  <a
+    className="senders-lists-link"
+    href="/dashboard/user_3"
+    onClick={[Function]}
+    to={null}
+  >
+    <li
+      className="sender-list-item"
+    >
+      <p
+        className="sender-list-item-title"
+      >
+        Filomena Cort 2
+      </p>
+      <div
+        className="sender-list-item-count"
+      >
+        3
+      </div>
+    </li>
+  </a>
+</ul>
+`;

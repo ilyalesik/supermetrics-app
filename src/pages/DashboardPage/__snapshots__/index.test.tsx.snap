@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders DashboardPage 1`] = `
+<div
+  className="dashboard-page"
+>
+  <div />
+  <div>
+    <div>
+      navigation
+    </div>
+  </div>
+  <div
+    className="dashboard-page-senders"
+  >
+    <div>
+      senders
+    </div>
+  </div>
+  <div
+    className="dashboard-page-posts"
+  >
+    <div>
+      posts
+    </div>
+  </div>
+</div>
+`;
