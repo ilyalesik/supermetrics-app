@@ -23,5 +23,17 @@ export const $senders = $rawPosts.map((state) => {
     }
   });
 
-  return Object.values(result);
+  return Object.values(result).sort((a, b) => {
+    if (a.from_name < b.from_name) {
+      return -1;
+    } else if (a.from_name > b.from_name) {
+      return 1;
+    } else if (a.count < b.count) {
+      return -1;
+    } else if (a.count > b.count) {
+      return 1;
+    } else {
+      return 0;
+    }
+  });
 });
